@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.swclsss.mvcproject.chap09.HelloController;
 import org.swclsss.mvcproject.chap11.RegistController;
 import org.swclsss.mvcproject.chap11.RegisterService;
+import org.swclsss.mvcproject.chap11.TopicController;
 
 @Configuration
 public class ControllerConfig {
@@ -23,5 +24,10 @@ public class ControllerConfig {
     @Bean
     public RegisterService registerService() {
         return new RegisterService();
+    }
+
+    @Bean
+    public TopicController topicController() {
+        return new TopicController();
     }
 }

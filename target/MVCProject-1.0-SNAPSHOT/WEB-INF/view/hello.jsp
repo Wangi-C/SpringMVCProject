@@ -11,6 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-    이름 : ${name}
+<h1>hello1 페이지</h1>
+<form action="/hello" method="post">
+    이름 : <input type="text" name="name" id="name">
+    이메일 : <input type="text" name="email" id="email">
+    <input type="submit" value="제출하기">
+</form>
 </body>
 </html>
