@@ -1,7 +1,9 @@
 package org.swclsss.mvcproject.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.validation.Validator;
 import org.springframework.web.servlet.config.annotation.*;
+import org.swclsss.mvcproject.chap11.RegisterRequestValidator;
 
 @Configuration
 @EnableWebMvc
@@ -18,5 +20,10 @@ public class MVCConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/main").setViewName("register/main");
+    }
+
+    @Override
+    public Validator getValidator() {
+        return new RegisterRequestValidator();
     }
 }
