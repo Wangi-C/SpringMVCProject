@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.Validator;
 import org.springframework.web.servlet.config.annotation.*;
 import org.swclsss.mvcproject.chap11.RegisterRequestValidator;
+import org.swclsss.mvcproject.logInOut.LoginCheckInterceptor;
 
 @Configuration
 @EnableWebMvc
@@ -21,11 +22,18 @@ public class MVCConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/main").setViewName("register/main");
-        registry.addViewController("/signIn").setViewName("login/loginForm");
+        registry.addViewController("/topics/list").setViewName("topicForm/topicList");
     }
 
     @Override
     public Validator getValidator() {
         return new RegisterRequestValidator();
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new LoginCheckInterceptor())
+                .addPathPatterns("/topics/**")
+                .excludePathPatterns("/topics/list/**");
     }
 }
