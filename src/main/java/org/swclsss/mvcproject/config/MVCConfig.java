@@ -12,6 +12,7 @@ public class MVCConfig implements WebMvcConfigurer {
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
+
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.jsp("/WEB-INF/view/",".jsp");
@@ -20,6 +21,7 @@ public class MVCConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/main").setViewName("register/main");
+        registry.addViewController("/signIn").setViewName("login/loginForm");
     }
 
     @Override
