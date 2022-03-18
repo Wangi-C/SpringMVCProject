@@ -1,4 +1,4 @@
-package org.swclsss.mvcproject.chap11;
+package org.swclsss.mvcproject.Topic;
 
 import java.io.Serializable;
 
