@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
     <title>완기 홈페이지</title>
@@ -16,6 +17,6 @@
     <% String id = (String)session.getAttribute("id"); %>
     <%=id%>님, 환영합니다.
     <hr>
-    <a href="/logInOut">로그아웃</a>
+    <a href="/logInOut"><spring:message code="logout"/> </a>
 </body>
 </html>
