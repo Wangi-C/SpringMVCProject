@@ -12,5 +12,11 @@
 </head>
 <body>
     <h2>게시글 들어올 자리.</h2>
+    <hr>
+    <form action="/topics">
+        from : <input type="text" name="from"> ~
+        to : <input type="text" name="to">
+        <input type="submit" value="날짜 검색"><br>
+    </form>
 </body>
 </html>

@@ -58,4 +58,16 @@ public class LogInOutController {
         session.invalidate();
         return "redirect:/signIn";
     }
+
+    @GetMapping("/logInCheck")
+    public ModelAndView loginCheck(HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+        if (session != null) {
+            String id = (String) session.getAttribute("id");
+            mav.setViewName("redirect:/hello/" + id);
+            return mav;
+        }
+        mav.setViewName("redirect:/signIn");
+        return mav;
+    }
 }

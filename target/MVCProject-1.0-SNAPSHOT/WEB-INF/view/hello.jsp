@@ -15,7 +15,8 @@
 <form action="/hello" method="post">
     이름 : <input type="text" name="name" id="name">
     이메일 : <input type="text" name="email" id="email">
-    <input type="submit" value="제출하기">
+    <input type="submit" value="제출하기"><br>
 </form>
+<h3>id : ${id}</h3>
 </body>
 </html>

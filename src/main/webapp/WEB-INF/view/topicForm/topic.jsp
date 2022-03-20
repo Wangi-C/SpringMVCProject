@@ -16,6 +16,8 @@
     글 : <input type="text" name="contents" id="contents">
     <input type="submit" value="글 등록">
 </form>
-
+<form action="/logInCheck">
+    <input type="submit" value="현재 회원">
+</form>
 </body>
 </html>
